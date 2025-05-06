@@ -20,4 +20,8 @@ jobs:
 
     - name: Run TMDL Documentation Validator
       run: |
-        python .github/scripts/validate_tmdl_docs.py
+        python .github/scripts/validate_tmdl_docs.py --require ${{ env.TMDL_DOC_REQUIRE }}
+      env:
+        # Set which entities must be documented, comma-separated (e.g. table,column,measure)
+        TMDL_DOC_REQUIRE: table,column,measure 
+        # ,model,role,partition
