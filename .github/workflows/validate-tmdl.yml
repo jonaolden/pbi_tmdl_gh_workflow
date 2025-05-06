@@ -1,0 +1,23 @@
+name: Validate TMDL Documentation
+
+on:
+  pull_request:
+    paths:
+      - '**/*.tmdl'
+
+jobs:
+  tmdl-doc-check:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Run TMDL Documentation Validator
+      run: |
+        python .github/scripts/validate_tmdl_docs.py
