@@ -1,7 +1,6 @@
 table financials
 	lineageTag: 9cbb52e2-361f-4a23-b50e-2d3cb6a48539
 
-	/// Sum of Gross Sales is the total revenue generated from sales before any deductions.
 	measure 'Sum of Gross Sales' = SUM(financials[Gross Sales])
 		lineageTag: c97e8f57-9f59-46bc-8e8b-3fc99b4ff0ad
 
